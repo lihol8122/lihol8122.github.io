@@ -7,20 +7,24 @@
     <title>김현기 | Accessibility &amp; Technology</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
+    <script src="game.js" defer></script>
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="홈으로 이동">hyunki.log</a>
+      <a class="brand" href="#home" aria-label="홈으로 이동">hyunki.log</a>
       <nav aria-label="주요 메뉴">
         <ul class="nav-list">
           <li><a href="#about">About</a></li>
-          <li><a href="#accessibility">Accessibility</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#research">Research</a></li>
           <li><a href="#games">Games</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
 
-    <main id="top">
+    <main id="home">
       <section class="hero" aria-labelledby="hero-title">
         <p class="eyebrow">ACCESSIBILITY · TECHNOLOGY · CURIOSITY</p>
         <h1 id="hero-title">더 많은 사람이<br><em>편리하고 동등하게</em><br>기술을 경험하도록.</h1>
@@ -35,28 +39,78 @@
         </div>
         <div class="section-copy">
           <p>사용자의 다양한 환경과 경험을 이해하고, 누구나 자연스럽게 사용할 수 있는 제품과 기술을 고민합니다.</p>
-          <p class="muted">직함은 생략합니다. 자세한 경력과 연락처는 공개하지 않습니다.</p>
+          <p class="muted">직함은 생략합니다. 공개하지 않은 경력과 연락처는 포함하지 않습니다.</p>
         </div>
       </section>
 
-      <section id="accessibility" class="content-section accent-section" aria-labelledby="accessibility-title">
+      <section id="experience" class="content-section accent-section" aria-labelledby="experience-title">
         <div>
-          <p class="section-label">02 / ACCESSIBILITY</p>
-          <h2 id="accessibility-title">포용적인 경험은<br>작은 디테일에서 시작됩니다.</h2>
+          <p class="section-label">02 / EXPERIENCE</p>
+          <h2 id="experience-title">접근성을<br>제품의 언어로.</h2>
         </div>
-        <p class="section-copy">명확한 구조, 충분한 대비, 키보드와 터치로 이어지는 흐름처럼 일상의 작은 장벽을 줄이는 일에 관심이 있습니다.</p>
+        <div class="section-copy">
+          <p><strong>삼성전자 MX 사업부</strong><br>Accessibility 담당</p>
+          <p>Google과 협력하며 더 많은 사람이 기술을 편리하고 동등하게 경험할 수 있는 방법을 고민합니다.</p>
+        </div>
       </section>
 
-      <section id="games" class="game-placeholder" aria-labelledby="games-title">
+      <section id="projects" class="content-section" aria-labelledby="projects-title">
         <div>
-          <p class="section-label">03 / GAMES</p>
+          <p class="section-label">03 / PROJECTS</p>
+          <h2 id="projects-title">작은 장벽을<br>줄이는 일</h2>
+        </div>
+        <div class="section-copy project-note">
+          <p>공개 가능한 프로젝트 상세 정보는 현재 제공되지 않았습니다.</p>
+          <p class="muted">확인되지 않은 프로젝트명이나 성과는 임의로 추가하지 않습니다.</p>
+        </div>
+      </section>
+
+      <section id="research" class="content-section accent-section" aria-labelledby="research-title">
+        <div>
+          <p class="section-label">04 / RESEARCH</p>
+          <h2 id="research-title">계속 관찰하고<br>배우는 중입니다.</h2>
+        </div>
+        <p class="section-copy">사용자 경험과 접근성에 관한 구체적인 연구 자료는 공개하지 않습니다. 이 공간은 앞으로의 기록을 위한 자리입니다.</p>
+      </section>
+
+      <section id="games" class="game-section" aria-labelledby="games-title">
+        <div class="game-heading">
+          <p class="section-label">05 / GAMES</p>
           <h2 id="games-title">잠깐 쉬어가는<br>작은 놀이터</h2>
+          <p>벽과 장애물을 피해 먹이를 모아보세요. 방향키, WASD 또는 화면의 버튼으로 움직일 수 있습니다.</p>
         </div>
-        <div class="game-card">
-          <p>지렁이 게임을 준비하고 있습니다.</p>
-          <p class="muted">키보드와 모바일 터치로 즐기는 게임이 다음 루프에서 추가됩니다.</p>
-          <span class="status" role="status">COMING SOON</span>
+        <div class="game-shell">
+          <div class="game-stats" aria-label="게임 점수">
+            <span>점수 <strong id="score">0</strong></span>
+            <span>최고 점수 <strong id="high-score">0</strong></span>
+          </div>
+          <div class="game-board-wrap">
+            <canvas id="game-board" width="480" height="320" role="img" aria-label="지렁이 게임 보드" aria-describedby="game-status"></canvas>
+          </div>
+          <p id="game-status" class="game-status" role="status" aria-live="polite">게임 시작 버튼을 눌러 시작하세요.</p>
+          <div class="game-actions">
+            <button id="start-game" class="button" type="button">게임 시작</button>
+            <button id="pause-game" class="button button-secondary" type="button" disabled>일시정지</button>
+            <button id="restart-game" class="button button-secondary" type="button" disabled>재시작</button>
+          </div>
+          <div class="touch-controls" aria-label="모바일 방향 조작">
+            <button type="button" data-direction="up" aria-label="위로 이동">↑</button>
+            <div>
+              <button type="button" data-direction="left" aria-label="왼쪽으로 이동">←</button>
+              <button type="button" data-direction="down" aria-label="아래로 이동">↓</button>
+              <button type="button" data-direction="right" aria-label="오른쪽으로 이동">→</button>
+            </div>
+          </div>
+          <p class="game-help">방향키 / WASD: 이동 · Space: 일시정지</p>
         </div>
+      </section>
+
+      <section id="contact" class="content-section contact-section" aria-labelledby="contact-title">
+        <div>
+          <p class="section-label">06 / CONTACT</p>
+          <h2 id="contact-title">천천히,<br>꾸준히.</h2>
+        </div>
+        <p class="section-copy">공개 가능한 연락처는 현재 제공되지 않았습니다.</p>
       </section>
 
       <section class="hobby-note" aria-label="취미">

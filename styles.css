@@ -45,12 +45,30 @@ h1 em { color: #7c9c1b; font-style: normal; }
 .intro { max-width: 34rem; margin-bottom: 2rem; color: var(--muted); font-size: 1.05rem; }
 .button { display: inline-flex; width: fit-content; gap: 1rem; align-items: center; padding: .8rem 1.1rem; color: var(--ink); background: var(--accent); font-size: .85rem; font-weight: 700; text-decoration: none; }
 
-.content-section, .game-placeholder { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3rem; padding: 7rem 0; border-top: 1px solid var(--line); }
+.content-section, .game-section { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3rem; padding: 7rem 0; border-top: 1px solid var(--line); }
 h2 { margin-bottom: 0; font-size: clamp(2rem, 5vw, 4rem); line-height: 1.05; letter-spacing: -.07em; }
 .section-copy { max-width: 34rem; align-self: end; font-size: 1.15rem; }
 .muted { color: var(--muted); font-size: .9rem; }
 .accent-section { background: linear-gradient(90deg, transparent, rgba(200, 229, 106, .28)); }
-.game-card { align-self: center; padding: 2rem; border: 1px solid var(--line); background: #fff; }
+.project-note, .contact-section .section-copy { align-self: center; }
+.game-section { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); }
+.game-heading { align-self: start; }
+.game-heading > p:last-child { max-width: 26rem; margin-top: 1.5rem; color: var(--muted); }
+.game-shell { min-width: 0; padding: 1.25rem; border: 1px solid var(--line); background: #fff; }
+.game-stats { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: .75rem; color: var(--muted); font-size: .8rem; }
+.game-stats strong { color: var(--ink); font-size: 1.1rem; }
+.game-board-wrap { overflow: hidden; background: var(--ink); }
+#game-board { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; }
+.game-status { min-height: 1.6em; margin: .75rem 0; color: var(--muted); font-size: .85rem; }
+.game-actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+.button-secondary { background: transparent; border: 1px solid var(--line); }
+button.button { border: 0; cursor: pointer; font: inherit; }
+button:disabled { cursor: not-allowed; opacity: .45; }
+.touch-controls { display: grid; justify-items: center; gap: .35rem; margin: 1.25rem auto .75rem; }
+.touch-controls > div { display: flex; gap: .35rem; }
+.touch-controls button { width: 2.8rem; height: 2.8rem; border: 1px solid var(--line); border-radius: .35rem; color: var(--ink); background: var(--paper); font-size: 1.25rem; cursor: pointer; touch-action: manipulation; }
+.touch-controls button:focus-visible, button.button:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+.game-help { margin: 0; color: var(--muted); font-size: .75rem; text-align: center; }
 .status { display: inline-block; margin-top: 1rem; padding: .3rem .55rem; background: var(--ink); color: #fff; font-size: .68rem; letter-spacing: .1em; }
 .hobby-note { display: flex; align-items: center; gap: .75rem; padding: 2rem 0; border-top: 1px solid var(--line); }
 .hobby-note span { color: #7c9c1b; font-size: 1.5rem; }
@@ -61,7 +79,7 @@ h2 { margin-bottom: 0; font-size: clamp(2rem, 5vw, 4rem); line-height: 1.05; let
   .site-header { align-items: flex-start; gap: 1rem; }
   .nav-list { flex-wrap: wrap; justify-content: flex-end; gap: .5rem .85rem; }
   .hero { min-height: 68vh; padding: 4rem 0; }
-  .content-section, .game-placeholder { grid-template-columns: 1fr; gap: 2rem; padding: 4rem 0; }
+  .content-section, .game-section { grid-template-columns: 1fr; gap: 2rem; padding: 4rem 0; }
   .section-copy { align-self: auto; }
   .site-footer { flex-direction: column; gap: .25rem; }
 }
