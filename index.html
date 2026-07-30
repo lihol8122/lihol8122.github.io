@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="김현기의 개인 프로페셔널 웹사이트">
+    <title>김현기 | Accessibility &amp; Technology</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="홈으로 이동">hyunki.log</a>
+      <nav aria-label="주요 메뉴">
+        <ul class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#accessibility">Accessibility</a></li>
+          <li><a href="#games">Games</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <p class="eyebrow">ACCESSIBILITY · TECHNOLOGY · CURIOSITY</p>
+        <h1 id="hero-title">더 많은 사람이<br><em>편리하고 동등하게</em><br>기술을 경험하도록.</h1>
+        <p class="intro">삼성전자 MX 사업부에서 Accessibility를 담당하며 Google과 협력하는 개발자, 김현기입니다.</p>
+        <a class="button" href="#games">Games 만나보기 <span aria-hidden="true">↓</span></a>
+      </section>
+
+      <section id="about" class="content-section" aria-labelledby="about-title">
+        <div>
+          <p class="section-label">01 / ABOUT</p>
+          <h2 id="about-title">기술을 보는<br>또 다른 시선</h2>
+        </div>
+        <div class="section-copy">
+          <p>사용자의 다양한 환경과 경험을 이해하고, 누구나 자연스럽게 사용할 수 있는 제품과 기술을 고민합니다.</p>
+          <p class="muted">직함은 생략합니다. 자세한 경력과 연락처는 공개하지 않습니다.</p>
+        </div>
+      </section>
+
+      <section id="accessibility" class="content-section accent-section" aria-labelledby="accessibility-title">
+        <div>
+          <p class="section-label">02 / ACCESSIBILITY</p>
+          <h2 id="accessibility-title">포용적인 경험은<br>작은 디테일에서 시작됩니다.</h2>
+        </div>
+        <p class="section-copy">명확한 구조, 충분한 대비, 키보드와 터치로 이어지는 흐름처럼 일상의 작은 장벽을 줄이는 일에 관심이 있습니다.</p>
+      </section>
+
+      <section id="games" class="game-placeholder" aria-labelledby="games-title">
+        <div>
+          <p class="section-label">03 / GAMES</p>
+          <h2 id="games-title">잠깐 쉬어가는<br>작은 놀이터</h2>
+        </div>
+        <div class="game-card">
+          <p>지렁이 게임을 준비하고 있습니다.</p>
+          <p class="muted">키보드와 모바일 터치로 즐기는 게임이 다음 루프에서 추가됩니다.</p>
+          <span class="status" role="status">COMING SOON</span>
+        </div>
+      </section>
+
+      <section class="hobby-note" aria-label="취미">
+        <span aria-hidden="true">✦</span>
+        <p>취미는 스쿠버 다이빙입니다.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© 2026 김현기</p>
+      <p>Made with care for everyone.</p>
+    </footer>
+  </body>
+</html>
