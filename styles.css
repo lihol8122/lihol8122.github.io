@@ -40,9 +40,9 @@ a:focus-visible, .button:focus-visible { outline: 3px solid var(--ink); outline-
 .hero { min-height: 75vh; display: grid; align-content: center; padding: 5rem 0; }
 .eyebrow, .section-label { margin: 0 0 1.25rem; color: var(--muted); font-size: .72rem; font-weight: 700; letter-spacing: .14em; }
 h1, h2, p { margin-top: 0; }
-h1 { max-width: 10ch; margin-bottom: 1.75rem; font-size: clamp(3.1rem, 10vw, 7.5rem); line-height: .98; letter-spacing: -.08em; }
+h1 { max-width: none; margin-bottom: 1.75rem; font-size: clamp(3.1rem, 10vw, 7.5rem); line-height: .98; letter-spacing: -.08em; }
 h1 em { color: #7c9c1b; font-style: normal; }
-.hero-line { display: block; }
+.hero-line { display: block; white-space: nowrap; }
 .intro { max-width: 34rem; margin-bottom: 2rem; color: var(--muted); font-size: 1.05rem; }
 .button { display: inline-flex; width: fit-content; gap: 1rem; align-items: center; padding: .8rem 1.1rem; color: var(--ink); background: var(--accent); font-size: .85rem; font-weight: 700; text-decoration: none; }
 
